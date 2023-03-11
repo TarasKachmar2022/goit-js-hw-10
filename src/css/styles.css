@@ -9,12 +9,42 @@ body {
   -moz-osx-font-smoothing: grayscale;
   background-color: #fafafa;
   color: #212121;
-  line-height: 1.5;
+}
+
+h2 {
+  margin-left: 5px;
+}
+
+p {
+  margin-left: 5px;
 }
 
 #search-box {
   font: inherit;
   padding: 8px;
   max-width: 320px;
-  margin-bottom: 16px;
+  margin-top: 10px;
+  margin-left: 10px;
+}
+
+.country-list {
+  list-style: none;
+  font-size: 20px;
+  padding-left: 0;
+  margin-left: 10px;
+  line-height: 0;
+}
+
+.country-info {
+  list-style: none;
+  margin-left: 10px;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+}
+
+.span {
+font-weight: 700;
 }

@@ -25,10 +25,10 @@ function onInputChange(event){
     }
     
     const dataMarkup = restCountriesApi.fetchCountries();
-
     dataMarkup.then(data => {
-        console.log(data)
+        // console.log(data)
         if(data === undefined){
+            refs.countryListEl.innerHTML = '';
             Notiflix.Notify.failure(
             "Oops, there is no country with that name",
                 {
@@ -36,10 +36,12 @@ function onInputChange(event){
                 },
             );
             return; 
-        }else if(data.length > 0 && data.length <= 2){
-            refs.countryListEl.innerHTML = сountryInfoMarkup(data);
+        }else if(data.length > 0 && data.length < 2){
+            refs.countryInfoEl.innerHTML = сountryInfoMarkup(data);
+            refs.countryListEl.innerHTML = '';
             return;
         }else if(data.length > 2 && data.length <= 10){
+            refs.countryInfoEl.innerHTML = '';
             refs.countryListEl.innerHTML = countryListMarkup(data);
             return;
         } else if(data.length > 10){
